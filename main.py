@@ -1,21 +1,39 @@
 import math
 math.pi
 
-HST = 1.13
-Large = 6.00
-ExtraLarge = 10.00
-OneTop = 1.00
-TwoTop = 1.75
-ThreeTop = 2.50
-FourTop = 3.35
+subtotal = 0
+
 sz=input ("Hello good sir, what size pizza would you like?")
 
-if Large > ExtraLarge:
-  print ("Ok that will be 6$")
-if ExtraLarge > Large:
+if sz == "Large":
+  print ("Ok that 6$")
+  subtotal = subtotal + 6 
+elif sz == "ExtraLarge":
   print ("Ok that will be 10$")
+  subtotal = subtotal + 10
+else:
+  print ("I think im going to give you a large")
+  subtotal = subtotal + 6
 
 tp=input ("How many toppings would you like?")
+if tp == "OneTop":
+  print ('ok that will be 1$')
+  subtotal = subtotal + 1
+elif tp == "TwoTop":
+  print ("ok that will be 1.75$")
+  subtotal = subtotal + 1.75
+elif tp == "ThreeTop":
+  print ("Ok that will be 2.50$")
+  subtotal = subtotal + 2.50
+elif tp == "FourTop":
+  print ("Ok that will be 3.35$")
+  subtotal = subtotal + 3.35
+else:
+  print ("Im going to give you TwoTop")
+  subtotal = subtotal + 1.75
 
-if OneTop > TwoTop:
-  print ("Ok that will be 1$")
+HST = subtotal * 0.13
+total = subtotal + HST
+print ("The subtotal is", subtotal)
+print ("HST is", HST)
+print ("The total is", total)
